@@ -5,6 +5,7 @@ Tests for metadata extraction functionality.
 import os
 import sys
 import unittest
+
 from bs4 import BeautifulSoup
 
 # Add parent directory to path so we can import the package
@@ -12,9 +13,9 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from notebooklm_notes2md.extractors.metadata import (
     extract_document_title,
-    extract_summary,
     extract_key_topics,
-    extract_metadata
+    extract_metadata,
+    extract_summary,
 )
 
 

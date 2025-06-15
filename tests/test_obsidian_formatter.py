@@ -2,19 +2,19 @@
 Tests for Obsidian formatter functionality.
 """
 
+import datetime
 import os
 import sys
 import unittest
-import datetime
-from typing import Dict, Any
+from typing import Any, Dict
 
 # Add parent directory to path so we can import the package
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from notebooklm_notes2md.formatters.obsidian import (
-    format_yaml_frontmatter,
+    format_obsidian_markdown,
     format_summary_as_callout,
-    format_obsidian_markdown
+    format_yaml_frontmatter,
 )
 
 

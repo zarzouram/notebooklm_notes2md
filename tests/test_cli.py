@@ -11,11 +11,7 @@ from unittest.mock import patch
 # Add parent directory to path so we can import the package
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from notebooklm_notes2md.cli.main import (
-    parse_args,
-    validate_args,
-    export_notes
-)
+from notebooklm_notes2md.cli.main import export_notes, parse_args, validate_args
 
 
 class TestCLI(unittest.TestCase):
