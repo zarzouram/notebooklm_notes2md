@@ -7,26 +7,31 @@ This document outlines the planned enhancements to the `notebooklm_notes2md` too
 ## Current Status
 
 🟢 **Cycle 0: Base Functionality** - COMPLETE
+
 - Basic NotebookLM HTML to Markdown/PDF conversion
 - Command line interface
 - Single file processing
 
 🟢 **Cycle 1: Metadata Extraction & Basic Obsidian Support** - COMPLETE
+
 - [x] Summary extraction
 - [x] Key topics extraction
 - [x] Basic Obsidian format with YAML frontmatter
 
 🟡 **Cycle 2: Citation Management & Advanced Metadata** - PLANNED
+
 - [ ] Citation field support
 - [ ] Extended metadata
 - [ ] Configurable output templates
 
 ⚪ **Cycle 3: Integration & Interoperability** - PLANNED
+
 - [ ] Zotero basic integration
 - [ ] Multi-format export
 - [ ] Batch processing
 
 ⚪ **Cycle 4: Advanced Features & UI** - PLANNED
+
 - [ ] Advanced Zotero integration
 - [ ] Content transformation
 - [ ] Simple GUI interface
@@ -34,9 +39,11 @@ This document outlines the planned enhancements to the `notebooklm_notes2md` too
 ## Detailed Roadmap
 
 ### Cycle 1: Metadata Extraction & Basic Obsidian Support
+
 **Goal**: Extract key metadata and support basic Obsidian formatting
 
 **Features**:
+
 1. **Summary Extraction**
    - Parse and extract summary content from NotebookLM HTML
    - Preserve formatting (bold, lists, etc.) in the extracted summary
@@ -53,14 +60,17 @@ This document outlines the planned enhancements to the `notebooklm_notes2md` too
 **Timeline**: 2-3 weeks (Target completion: July 5, 2025)
 
 **Success Criteria**:
+
 - Successfully extracts summary and key topics from test files
 - Generates valid Obsidian-compatible Markdown with proper YAML frontmatter
 - All existing functionality continues to work without regression
 
 ### Cycle 2: Citation Management & Advanced Metadata
+
 **Goal**: Add academic reference capabilities and enhanced metadata
 
 **Features**:
+
 1. **Citation Field Support**
    - Add citekey and status fields in YAML frontmatter
    - Provide placeholder templates for user customization
@@ -79,14 +89,17 @@ This document outlines the planned enhancements to the `notebooklm_notes2md` too
 **Timeline**: 3-4 weeks (Target completion: August 1, 2025)
 
 **Success Criteria**:
+
 - Correctly formats citation fields in YAML frontmatter
 - Preserves extended metadata from source documents
 - Templates produce consistent and valid Markdown
 
 ### Cycle 3: Integration & Interoperability
+
 **Goal**: Connect with external tools and enhance interoperability
 
 **Features**:
+
 1. **Zotero Basic Integration**
    - Parse Zotero citation keys if provided
    - Generate compatible citation formats
@@ -105,14 +118,17 @@ This document outlines the planned enhancements to the `notebooklm_notes2md` too
 **Timeline**: 4-5 weeks (Target completion: September 5, 2025)
 
 **Success Criteria**:
+
 - Successfully processes citation keys from Zotero
 - Correctly generates multiple output formats from the same input
 - Efficiently handles batch processing with proper error handling
 
 ### Cycle 4: Advanced Features & UI
+
 **Goal**: Add advanced features and improve user experience
 
 **Features**:
+
 1. **Advanced Zotero Integration**
    - Fetch metadata directly from Zotero API
    - Support bibliography generation
@@ -131,6 +147,7 @@ This document outlines the planned enhancements to the `notebooklm_notes2md` too
 **Timeline**: 6-8 weeks (Target completion: October 31, 2025)
 
 **Success Criteria**:
+
 - Successfully connects to Zotero API and retrieves metadata
 - Correctly processes complex content transformations
 - GUI provides intuitive access to core functionality

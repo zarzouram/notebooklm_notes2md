@@ -1,11 +1,11 @@
 ---
 title: "Simulating a Fair Market: Mechanics and Price Behavior"
 tags:
-  - "Market Simulation Mechanics"
-  - "Auction Pricing"
-  - "Price Behavior"
-  - "Random Movement"
-  - "Wealth Limits"
+  - "Market-Simulation-Mechanics"
+  - "Auction-Pricing"
+  - "Price-Behavior"
+  - "Random-Movement"
+  - "Wealth-Limits"
 date: 2025-06-15
 citekey: {{citekey}}
 status: unread
