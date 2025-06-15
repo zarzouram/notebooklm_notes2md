@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - YAML frontmatter with title, tags, and date
   - Citation fields (citekey and status)
   - Summary formatted as callout block
+  - Improved tag formatting for Obsidian compatibility:
+    - Converting spaces to hyphens
+    - Removing special characters
+    - Handling numeric tag prefixes
 - New command-line option: `--format` to select output format
 - Modular project structure for better maintainability
 - Additional tests for new functionality

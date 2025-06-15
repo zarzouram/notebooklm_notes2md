@@ -18,8 +18,8 @@ The YAML frontmatter contains metadata extracted from the NotebookLM notes:
 ---
 title: "Document Title"
 tags:
-  - "Tag 1"
-  - "Tag 2"
+  - "Tag-1"
+  - "Tag-2"
 date: 2025-06-15
 citekey: {{citekey}}
 status: unread
@@ -27,7 +27,10 @@ status: unread
 ```
 
 - **title**: Extracted from the NotebookLM document title
-- **tags**: Extracted from the key topics in NotebookLM
+- **tags**: Extracted from the key topics in NotebookLM. The following transformations are applied for Obsidian compatibility:
+  - Spaces are converted to hyphens (kebab-case) as Obsidian tags cannot contain spaces
+  - Special characters are removed (only alphanumeric, hyphens, and underscores are kept)
+  - Tags starting with numbers are prefixed with 't' as Obsidian requires tags to start with a letter
 - **date**: The date when the export was created
 - **citekey**: A placeholder for academic citation (to be filled manually)
 - **status**: Reading status (unread/read/edited)
@@ -52,6 +55,24 @@ To export in Obsidian format, use the `--format obsidian` flag:
 ```bash
 notebooklm-export input.html output.md --format obsidian
 ```
+
+## Tag Formatting
+
+Obsidian has specific requirements for tags:
+- Tags cannot contain spaces
+- Tags should only contain alphanumeric characters, hyphens, and underscores
+- Tags must start with a letter (not a number)
+
+The Obsidian formatter automatically handles these requirements:
+
+| Original Tag | Transformed Tag | Transformation Applied |
+|--------------|-----------------|------------------------|
+| `Machine Learning` | `Machine-Learning` | Spaces → hyphens |
+| `AI & ML` | `AI-ML` | Special characters removed |
+| `123-Topic` | `t123-Topic` | 't' prefix added to numeric start |
+| `Valid_Tag_Name` | `Valid_Tag_Name` | No change needed |
+
+See the [example script](../examples/tag_formatting.py) for a demonstration of tag formatting.
 
 ## Citation Management
 

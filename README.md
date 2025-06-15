@@ -15,13 +15,18 @@ A Python script to convert HTML-formatted notes (from Google NotebookLM) into Ma
   - [4.3. Manual Installation](#43-manual-installation)
   - [4.4. Development Installation](#44-development-installation)
 - [5. Usage](#5-usage)
+  - [5.1. Format Options](#51-format-options)
 - [6. Output Example](#6-output-example)
 - [7. Notes](#7-notes)
+  - [7.1. Metadata Extraction](#71-metadata-extraction)
+  - [7.2. Obsidian Format](#72-obsidian-format)
+  - [7.3. Roadmap](#73-roadmap)
 - [8. License](#8-license)
 - [9. Contributing](#9-contributing)
 - [10. Development](#10-development)
   - [10.1. Running Tests](#101-running-tests)
   - [10.2. Code Quality](#102-code-quality)
+  - [10.3. Examples](#103-examples)
 
 ---
 
@@ -154,10 +159,10 @@ pip install -e .
    ```bash
    # Export to PDF
    notebooklm-export my_notes_html.txt my_notes.pdf
-   
+
    # Export to standard Markdown
    notebooklm-export my_notes_html.txt my_notes.md
-   
+
    # Export to Obsidian-compatible Markdown
    notebooklm-export my_notes_html.txt my_notes.md --format obsidian
    ```
@@ -168,7 +173,10 @@ pip install -e .
 
 - `standard` (default): Basic Markdown format
 - `obsidian`: Obsidian-compatible Markdown with YAML frontmatter, including:
-  - Document title and extracted tags
+  - Document title and extracted tags (with special formatting for Obsidian compatibility):
+    - Spaces converted to hyphens
+    - Special characters removed
+    - Tags starting with numbers prefixed with 't'
   - Summary formatted as a callout block
   - Citation placeholders (`citekey` and `status` fields)
 

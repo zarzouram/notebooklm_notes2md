@@ -3,7 +3,7 @@ Obsidian-compatible Markdown formatter for NotebookLM notes.
 """
 
 import datetime
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional
 
 from notebooklm_notes2md.utils.text_processing import clean_text
 
@@ -19,25 +19,36 @@ def format_yaml_frontmatter(metadata: Dict[str, Any]) -> str:
         YAML frontmatter as a string
     """
     frontmatter = ["---"]
-    
+
     # Add title
     if "title" in metadata and metadata["title"]:
         frontmatter.append(f'title: "{metadata["title"]}"')
-    
+
     # Add tags if available
     if "tags" in metadata and metadata["tags"]:
         frontmatter.append("tags:")
         for tag in metadata["tags"]:
-            frontmatter.append(f'  - "{tag}"')
-    
+            # Convert spaces to hyphens (kebab-case) for Obsidian compatibility
+            # Also remove special characters that may cause issues in Obsidian tags
+            import re
+
+            # Replace spaces with hyphens and remove special characters except for alphanumeric, hyphen, and underscore
+            obsidian_tag = re.sub(r'[^\w\-]', '', tag.replace(" ", "-"))
+            # Ensure tag doesn't start with a number (Obsidian requirement)
+            if obsidian_tag and obsidian_tag[0].isdigit():
+                obsidian_tag = f"t{obsidian_tag}"
+            # Skip empty tags
+            if obsidian_tag:
+                frontmatter.append(f'  - "{obsidian_tag}"')
+
     # Add date
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")
     frontmatter.append(f"date: {current_date}")
-    
+
     # Add citation placeholder
     frontmatter.append("citekey: {{citekey}}")
     frontmatter.append("status: unread")
-    
+
     frontmatter.append("---\n")
     return "\n".join(frontmatter)
 
@@ -54,19 +65,19 @@ def format_summary_as_callout(summary: str) -> str:
     """
     if not summary:
         return ""
-    
+
     clean_summary = clean_text(summary)
     callout = "> [!summary]\n"
-    
+
     # Add each line of the summary with a ">" prefix
     for line in clean_summary.split("\n"):
         callout += f"> {line}\n"
-    
+
     return callout + "\n"
 
 
 def format_obsidian_markdown(
-    notes: List[Dict[str, str]], 
+    notes: List[Dict[str, str]],
     metadata: Dict[str, Any]
 ) -> str:
     """
@@ -81,17 +92,17 @@ def format_obsidian_markdown(
     """
     # Start with YAML frontmatter
     result = format_yaml_frontmatter(metadata)
-    
+
     # Add summary if available
     if "summary" in metadata and metadata["summary"]:
         result += format_summary_as_callout(metadata["summary"])
-    
+
     # Add document title as main heading
     result += f"# {metadata['title']}\n\n"
-    
+
     # Add all notes
     for note in notes:
         clean_content = clean_text(note["note"])
         result += clean_content + "\n\n"
-    
+
     return result
