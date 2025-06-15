@@ -35,7 +35,9 @@ Google’s NotebookLM is a powerful tool for interacting with your documents and
 This script solves the problem by:
 
 - Parsing the raw HTML structure from the downloaded notes
+- Extracting metadata like summaries and key topics
 - Converting each note into clean, readable Markdown
+- Supporting Obsidian-compatible formatting with YAML frontmatter
 - Exporting the notes to either a single PDF or Markdown file
 
 ---
@@ -141,21 +143,34 @@ pip install -e .
 
    ```bash
    # If installed via pip
-   notebooklm-export <input_path> <output_path>
+   notebooklm-export <input_path> <output_path> [--format FORMAT]
 
    # OR directly using the script
-   python export_note.py <input_path> <output_path>
+   python notebooklm_export.py <input_path> <output_path> [--format FORMAT]
    ```
 
    For example:
 
    ```bash
-   notebooklm-export my_notes_html.txt my_notes.pdf  # Export to PDF
-   # OR
-   notebooklm-export my_notes_html.txt my_notes.md   # Export to Markdown
+   # Export to PDF
+   notebooklm-export my_notes_html.txt my_notes.pdf
+   
+   # Export to standard Markdown
+   notebooklm-export my_notes_html.txt my_notes.md
+   
+   # Export to Obsidian-compatible Markdown
+   notebooklm-export my_notes_html.txt my_notes.md --format obsidian
    ```
 
 3. The script will generate a single PDF or Markdown file containing all your notes.
+
+### 5.1. Format Options
+
+- `standard` (default): Basic Markdown format
+- `obsidian`: Obsidian-compatible Markdown with YAML frontmatter, including:
+  - Document title and extracted tags
+  - Summary formatted as a callout block
+  - Citation placeholders (`citekey` and `status` fields)
 
 ---
 
@@ -173,7 +188,13 @@ pip install -e .
 - The script expects the notes to be wrapped in a `<labs-tailwind-doc-viewer>` or similar tag in the HTML. Adjust the script if your HTML structure differs.
 - All notes are combined into a single output file (PDF or Markdown).
 - The script preserves formatting including headings, bullet lists, and code blocks.
+- Metadata extraction works best with the latest NotebookLM HTML format.
+- Obsidian format includes YAML frontmatter with citation placeholders that can be manually edited.
 - For more details, troubleshooting, and screenshots, refer to the [original Medium article](https://vivekhere.medium.com/how-to-export-google-notebooklm-saved-notes-as-pdf-10b5ce6c6c10).
+
+### 7.1. Roadmap
+
+For information about planned features and development progress, see the [ROADMAP.md](docs/ROADMAP.md) file.
 
 ---
 

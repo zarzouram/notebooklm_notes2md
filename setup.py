@@ -18,7 +18,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/zarzouram/notebooklm_notes2md",
     packages=find_packages(),
-    py_modules=["export_note"],
+    py_modules=["notebooklm_export"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.12",
@@ -32,7 +32,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "notebooklm-export=export_note:main",
+            "notebooklm-export=notebooklm_notes2md.cli.main:main",
         ],
     },
 )
