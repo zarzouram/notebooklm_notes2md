@@ -46,6 +46,8 @@ This script solves the problem by:
 
 ## Installation
 
+### Using uv (Recommended)
+
 1. **Create and activate a virtual environment using uv:**
 
    ```bash
@@ -57,6 +59,21 @@ This script solves the problem by:
 
    ```bash
    uv pip install beautifulsoup4==4.13.4 markdown_pdf==1.7
+   ```
+
+### Using pip
+
+1. **Create and activate a virtual environment:**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
    ```
 
 ## Usage
