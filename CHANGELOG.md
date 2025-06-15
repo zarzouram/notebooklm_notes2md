@@ -5,7 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 2025-06-15
+## [0.2.0] - 2025-06-15
+
+### Added
+
+- Metadata extraction from NotebookLM HTML
+  - Document title extraction
+  - Summary extraction
+  - Key topics/tags extraction
+- Obsidian-compatible Markdown format
+  - YAML frontmatter with title, tags, and date
+  - Citation fields (citekey and status)
+  - Summary formatted as callout block
+- New command-line option: `--format` to select output format
+- Modular project structure for better maintainability
+- Additional tests for new functionality
+- Documentation for Obsidian format
+- Example files showing new features
+
+### Changed
+
+- Refactored project into proper Python package structure
+- Updated command-line entry point
+- Improved error handling for metadata extraction
+- Enhanced documentation in README
+
+## [0.1.0] - 2025-06-14
 
 ### Added
 
