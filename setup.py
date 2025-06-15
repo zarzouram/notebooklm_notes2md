@@ -10,7 +10,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="notebooklm_notes2md",
-    version="0.1.0",
+    version="0.2.0",
     author="zarzouram",
     # author_email="your.email@example.com",
     description="Convert NotebookLM notes to Markdown or PDF",
