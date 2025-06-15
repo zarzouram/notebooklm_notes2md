@@ -2,7 +2,8 @@
 HTML processing utilities for NotebookLM notes.
 """
 
-from typing import Any, List, Optional, Generator
+from typing import Any, Generator, List, Optional
+
 from bs4 import BeautifulSoup
 from bs4.element import Comment, Tag
 

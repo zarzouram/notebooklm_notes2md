@@ -6,6 +6,7 @@ programmatically to extract metadata and format as Obsidian markdown.
 
 import argparse
 import sys
+
 from bs4 import BeautifulSoup
 
 from notebooklm_notes2md.core.parser import parse_notes

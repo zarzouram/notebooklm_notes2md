@@ -4,7 +4,8 @@ Metadata extractors for NotebookLM notes.
 This module contains functions for extracting metadata from NotebookLM HTML.
 """
 
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional
+
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
@@ -53,11 +54,11 @@ def extract_key_topics(soup: BeautifulSoup) -> List[str]:
     """
     topics = []
     topic_elements = soup.select('.key-topics-chip .key-topics-text p')
-    
+
     for topic in topic_elements:
         if topic.text.strip():
             topics.append(topic.text.strip())
-    
+
     return topics
 
 
@@ -76,9 +77,9 @@ def extract_metadata(soup: BeautifulSoup) -> Dict[str, Any]:
         "tags": extract_key_topics(soup),
         "date": None,  # Will be filled in by the formatter
     }
-    
+
     summary = extract_summary(soup)
     if summary:
         metadata["summary"] = summary
-    
+
     return metadata

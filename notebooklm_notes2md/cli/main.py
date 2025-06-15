@@ -12,8 +12,8 @@ from markdown_pdf import MarkdownPdf, Section
 
 from notebooklm_notes2md.core.parser import parse_notes
 from notebooklm_notes2md.extractors.metadata import extract_metadata
-from notebooklm_notes2md.formatters.standard import format_standard_markdown
 from notebooklm_notes2md.formatters.obsidian import format_obsidian_markdown
+from notebooklm_notes2md.formatters.standard import format_standard_markdown
 from notebooklm_notes2md.utils.text_processing import clean_text
 
 

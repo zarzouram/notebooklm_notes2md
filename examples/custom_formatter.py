@@ -7,7 +7,8 @@ create your own custom formatter for NotebookLM notes.
 import argparse
 import datetime
 import sys
-from typing import Dict, List, Any
+from typing import Any, Dict, List
+
 from bs4 import BeautifulSoup
 
 from notebooklm_notes2md.core.parser import parse_notes

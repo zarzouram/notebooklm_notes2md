@@ -2,24 +2,22 @@
 Core functionality for parsing and processing NotebookLM notes.
 """
 
-from typing import List, Dict, Optional
+from typing import Dict, List, Optional
+
 from bs4 import BeautifulSoup
 from bs4.element import Tag
 
 # Import original functionality from the script
 from notebooklm_notes2md.utils.html_processing import (
-    extract_tag_classes,
-    format_span_text,
-    process_div_prefix,
     drill_into_tag,
-    is_comment_separator,
+    extract_tag_classes,
+    find_parent_element,
+    format_span_text,
     inner_childs_with_split,
-    find_parent_element
+    is_comment_separator,
+    process_div_prefix,
 )
-from notebooklm_notes2md.utils.text_processing import (
-    clean_text,
-    create_note_from_texts
-)
+from notebooklm_notes2md.utils.text_processing import clean_text, create_note_from_texts
 
 
 def parse_notes(soup: BeautifulSoup) -> List[Dict[str, str]]:
