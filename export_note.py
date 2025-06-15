@@ -254,7 +254,7 @@ def clean_text(text: str) -> str:
         Cleaned text ready for export
     """
     # Fix bullet point formatting
-    text = re.sub(r"-(\n+)", "- ", text)
+    text = re.sub(r"-\s*\n", "- ", text)
 
     # Remove reference numbers like [1, 2] or [3]
     text = re.sub(r"\[\s*\d+(?:\s*[-,]\s*\d+)*\s*\]", "", text)

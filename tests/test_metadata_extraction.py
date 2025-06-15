@@ -39,7 +39,7 @@ class TestMetadataExtraction(unittest.TestCase):
         title = extract_document_title(self.soup)
         self.assertEqual(
             title,
-            "Simulating a Fair Market: Mechanics and Price Behavior",
+            "Market Simulation: Auction Pricing and Manipulation's Grip",
             "Failed to extract correct document title"
         )
 
@@ -48,7 +48,7 @@ class TestMetadataExtraction(unittest.TestCase):
         summary = extract_summary(self.soup)
         self.assertIsNotNone(summary, "Failed to extract summary")
         self.assertTrue(
-            "mechanics of simulating a fair market" in summary,
+            "mechanics of a simulated fair market" in summary,
             "Summary does not contain expected content"
         )
 
@@ -58,9 +58,9 @@ class TestMetadataExtraction(unittest.TestCase):
         expected_topics = [
             "Market Simulation Mechanics",
             "Auction Pricing",
-            "Price Behavior",
-            "Random Movement",
-            "Wealth Limits"
+            "Fair Market Characteristics",
+            "Market Manipulation",
+            "Self-Trading"
         ]
 
         self.assertEqual(len(topics), 5, "Incorrect number of topics extracted")
