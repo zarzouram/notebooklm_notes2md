@@ -11,12 +11,12 @@ This document outlines the planned enhancements to the `notebooklm_notes2md` too
 - Command line interface
 - Single file processing
 
-🟡 **Cycle 1: Metadata Extraction & Basic Obsidian Support** - IN PROGRESS
-- [ ] Summary extraction
-- [ ] Key topics extraction
-- [ ] Basic Obsidian format with YAML frontmatter
+🟢 **Cycle 1: Metadata Extraction & Basic Obsidian Support** - COMPLETE
+- [x] Summary extraction
+- [x] Key topics extraction
+- [x] Basic Obsidian format with YAML frontmatter
 
-⚪ **Cycle 2: Citation Management & Advanced Metadata** - PLANNED
+🟡 **Cycle 2: Citation Management & Advanced Metadata** - PLANNED
 - [ ] Citation field support
 - [ ] Extended metadata
 - [ ] Configurable output templates

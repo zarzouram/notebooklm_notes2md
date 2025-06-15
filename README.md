@@ -192,7 +192,27 @@ pip install -e .
 - Obsidian format includes YAML frontmatter with citation placeholders that can be manually edited.
 - For more details, troubleshooting, and screenshots, refer to the [original Medium article](https://vivekhere.medium.com/how-to-export-google-notebooklm-saved-notes-as-pdf-10b5ce6c6c10).
 
-### 7.1. Roadmap
+### 7.1. Metadata Extraction
+
+The tool extracts the following metadata from NotebookLM HTML:
+
+- **Document Title**: The title of the NotebookLM document
+- **Summary**: The AI-generated summary of the content
+- **Key Topics/Tags**: The key topics identified by NotebookLM
+
+This metadata is preserved in the Obsidian export format as YAML frontmatter and in the content structure.
+
+### 7.2. Obsidian Format
+
+The Obsidian export format includes:
+
+- **YAML Frontmatter**: With title, tags, date, and citation placeholders
+- **Summary Callout**: The extracted summary formatted as an Obsidian callout
+- **Document Content**: The notes formatted as Markdown
+
+For more details, see the [Obsidian Format Documentation](docs/obsidian_format.md).
+
+### 7.3. Roadmap
 
 For information about planned features and development progress, see the [ROADMAP.md](docs/ROADMAP.md) file.
 
@@ -240,3 +260,10 @@ pip install flake8 mypy
 flake8 export_note.py
 mypy export_note.py
 ```
+
+### 10.3. Examples
+
+The repository includes example scripts demonstrating how to use the package programmatically:
+
+- **[examples/obsidian_export.py](examples/obsidian_export.py)**: Shows how to extract metadata and format notes as Obsidian markdown.
+- **[examples/custom_formatter.py](examples/custom_formatter.py)**: Demonstrates creating a custom formatter for academic publishing.
