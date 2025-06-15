@@ -29,21 +29,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Improved HTML parsing for more robust extraction
-- Enhanced code organization with a modular package structure
-- Better text formatting in output Markdown files
-- Better spacing for bold text and code blocks
+- Refactored code to use a modular package structure
+- Fixed bullet point formatting in text processing
+- Improved test reliability and coverage
 
-### Fixed
+### Removed
 
-- Fixed bullet point formatting in `clean_text()` function
-- Improved YAML frontmatter spacing in Obsidian formatter
-- Made test suite more resilient to HTML structure changes
-
-- Refactored project into proper Python package structure
-- Updated command-line entry point
-- Improved error handling for metadata extraction
-- Enhanced documentation in README
+- Legacy `export_note.py` script (replaced by the modular package)
+- Redundant configuration files
+- Tests for deprecated functionality
 
 ## [0.1.0] - 2025-06-14
 
