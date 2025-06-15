@@ -1,0 +1,29 @@
+# Python virtual environment
+nblm_notes_cov/
+venv/
+env/
+.env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test data
+tests/output/
+
+# OS specific files
+.DS_Store
+Thumbs.db
