@@ -3,7 +3,7 @@
 Setup script for notebooklm_notes2md package.
 """
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -12,7 +12,7 @@ setup(
     name="notebooklm_notes2md",
     version="0.1.0",
     author="zarzouram",
-    author_email="your.email@example.com",  # Replace with your email
+    # author_email="your.email@example.com",
     description="Convert NotebookLM notes to Markdown or PDF",
     long_description=long_description,
     long_description_content_type="text/markdown",

@@ -4,7 +4,28 @@ A Python script to convert HTML-formatted notes (from Google NotebookLM) into Ma
 
 ---
 
-## Why This Script?
+**Table of Content**
+
+- [1. Why This Script?](#1-why-this-script)
+- [2. How to Export Your Notes from NotebookLM](#2-how-to-export-your-notes-from-notebooklm)
+- [3. Requirements](#3-requirements)
+- [4. Installation](#4-installation)
+  - [4.1. Using pip (from PyPI)](#41-using-pip-from-pypi)
+  - [4.2. Using pip (from GitHub)](#42-using-pip-from-github)
+  - [4.3. Manual Installation](#43-manual-installation)
+  - [4.4. Development Installation](#44-development-installation)
+- [5. Usage](#5-usage)
+- [6. Output Example](#6-output-example)
+- [7. Notes](#7-notes)
+- [8. License](#8-license)
+- [9. Contributing](#9-contributing)
+- [10. Development](#10-development)
+  - [10.1. Running Tests](#101-running-tests)
+  - [10.2. Code Quality](#102-code-quality)
+
+---
+
+## 1. Why This Script?
 
 Google’s NotebookLM is a powerful tool for interacting with your documents and taking notes. However, exporting your saved notes is not straightforward:
 
@@ -19,7 +40,7 @@ This script solves the problem by:
 
 ---
 
-## How to Export Your Notes from NotebookLM
+## 2. How to Export Your Notes from NotebookLM
 
 1. **Open your NotebookLM notebook.**
 2. In the Studio section, find the option to **Convert all notes to source**.
@@ -39,27 +60,27 @@ This script solves the problem by:
 
 ---
 
-## Requirements
+## 3. Requirements
 
 - Python 3.12
 - [uv](https://github.com/astral-sh/uv) (for fast virtual environment and package management)
 
-## Installation
+## 4. Installation
 
-### Using pip (from PyPI)
+### 4.1. Using pip (from PyPI)
 
 ```bash
 # Coming soon!
 pip install notebooklm-notes2md
 ```
 
-### Using pip (from GitHub)
+### 4.2. Using pip (from GitHub)
 
 ```bash
 pip install git+https://github.com/zarzouram/notebooklm_notes2md.git
 ```
 
-### Manual Installation
+### 4.3. Manual Installation
 
 #### Using uv (Recommended)
 
@@ -105,7 +126,7 @@ pip install git+https://github.com/zarzouram/notebooklm_notes2md.git
    pip install -r requirements.txt
    ```
 
-### Development Installation
+### 4.4. Development Installation
 
 For development, install the package in editable mode:
 
@@ -113,7 +134,7 @@ For development, install the package in editable mode:
 pip install -e .
 ```
 
-## Usage
+## 5. Usage
 
 1. Place your HTML-formatted notes in a text file (with any file name).
 2. Run the script with input and output file paths:
@@ -121,7 +142,7 @@ pip install -e .
    ```bash
    # If installed via pip
    notebooklm-export <input_path> <output_path>
-   
+
    # OR directly using the script
    python export_note.py <input_path> <output_path>
    ```
@@ -138,7 +159,7 @@ pip install -e .
 
 ---
 
-## Output Example
+## 6. Output Example
 
 - The output preserves Markdown formatting, including headings, bullet lists, and code blocks.
 - PDF output includes proper formatting and is easy to read.
@@ -147,7 +168,7 @@ pip install -e .
 
 ---
 
-## Notes
+## 7. Notes
 
 - The script expects the notes to be wrapped in a `<labs-tailwind-doc-viewer>` or similar tag in the HTML. Adjust the script if your HTML structure differs.
 - All notes are combined into a single output file (PDF or Markdown).
@@ -156,10 +177,11 @@ pip install -e .
 
 ---
 
-## License
+## 8. License
+
 MIT License
 
-## Contributing
+## 9. Contributing
 
 Contributions are welcome! Here's how you can contribute:
 
@@ -171,9 +193,9 @@ Contributions are welcome! Here's how you can contribute:
 
 For major changes, please open an issue first to discuss what you would like to change.
 
-## Development
+## 10. Development
 
-### Running Tests
+### 10.1. Running Tests
 
 Run the test suite using pytest:
 
@@ -185,7 +207,7 @@ pip install pytest
 pytest
 ```
 
-### Code Quality
+### 10.2. Code Quality
 
 Ensure code quality with:
 
