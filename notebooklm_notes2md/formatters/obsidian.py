@@ -3,6 +3,7 @@ Obsidian-compatible Markdown formatter for NotebookLM notes.
 """
 
 import datetime
+import re
 from typing import Any, Dict, List, Optional
 
 from notebooklm_notes2md.utils.text_processing import clean_text
@@ -49,8 +50,11 @@ def format_yaml_frontmatter(metadata: Dict[str, Any]) -> str:
     frontmatter.append("citekey: {{citekey}}")
     frontmatter.append("status: unread")
 
-    frontmatter.append("---\n")
-    return "\n".join(frontmatter)
+    # Add closing delimiter with a newline after
+    frontmatter.append("---")
+    
+    # Join everything with newlines and add an extra newline after the frontmatter
+    return "\n".join(frontmatter) + "\n\n"
 
 
 def format_summary_as_callout(summary: str) -> str:
@@ -70,6 +74,11 @@ def format_summary_as_callout(summary: str) -> str:
     callout = "> [!summary]\n"
 
     # Add each line of the summary with a ">" prefix
+    # Make sure there is proper spacing around bold markers
+    clean_summary = re.sub(r'(\*\*)([^\s])', r'\1 \2', clean_summary)
+    clean_summary = re.sub(r'([^\s])(\*\*)', r'\1 \2', clean_summary)
+    
+    # Process each line
     for line in clean_summary.split("\n"):
         callout += f"> {line}\n"
 
