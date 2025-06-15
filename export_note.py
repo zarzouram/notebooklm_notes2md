@@ -391,7 +391,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "input_path",
         type=str,
-        help="Path to the input notes.txt file (HTML export)",
+        help="Path to the input HTML file containing NotebookLM notes",
     )
 
     parser.add_argument(
