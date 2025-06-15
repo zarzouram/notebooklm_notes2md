@@ -263,10 +263,6 @@ Ensure code quality with:
 ```bash
 # Install linting tools
 pip install flake8 mypy
-
-# Run linters
-flake8 export_note.py
-mypy export_note.py
 ```
 
 ### 10.3. Examples

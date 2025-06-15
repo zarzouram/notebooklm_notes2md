@@ -32,7 +32,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=100 --statistics
     - name: Type check with mypy
       run: |
-        mypy export_note.py
+        mypy notebooklm_notes2md/ notebooklm_export.py
     - name: Test with pytest
       run: |
-        pytest
+        python -m unittest discover tests
