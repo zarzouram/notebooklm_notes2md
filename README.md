@@ -54,17 +54,9 @@ This script solves the problem by:
 3. This creates a new file in your sources section. You need to get the HTML source of this file:
    - Press `F12` or right-click and select **Inspect** to open your browser’s DevTools.
    - Use the **Select Element** tool (top-left in DevTools) and hover over the notes section.
-   - Find the `<div>` with class `elements-container` (or similar) that contains your notes.
-   - Right-click this element and choose **Copy > Copy element**.
-
-   ![Selecting and copying the elements container in DevTools](images/devtools_copy_element.png)
-
+   - Find the `<div>` with class `panel-content` (or similar) that contains your notes.
+   - Right-click this element and choose **Copy > Copy Outer HTML**.
 4. Paste the copied HTML into a text file (you can name it anything, e.g., `notes.txt`).
-
-   ![NotebookLM elements container highlighted in browser](images/notebooklm_elements_container.png)
-
-> **Tip:** For screenshots and a visual walkthrough, see the original [Medium article](https://vivekhere.medium.com/how-to-export-google-notebooklm-saved-notes-as-pdf-10b5ce6c6c10).
-
 ---
 
 ## 3. Requirements
